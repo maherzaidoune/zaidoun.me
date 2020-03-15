@@ -21,9 +21,9 @@ const styles = StyleSheet.create({
     },
     title: {
       color: Color.white,
-      padding: 15,
+      padding: 20,
       backgroundColor: Color.primary,
-      fontSize: 26,
-      fontWeight: '600'
+      fontSize: 28,
+      fontWeight: '700'
     }
   });

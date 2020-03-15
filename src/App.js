@@ -1,24 +1,45 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native-web';
+import React, { PureComponent } from 'react';
+import { View, StyleSheet } from 'react-native-web';
+import { createStore, applyMiddleware } from 'redux';
+import ReduxThunk from 'redux-thunk';
+import { Provider } from 'react-redux';
 import Color from './utils/Color';
 import Header from './component/Header';
 import Actions from './component/Actions';
 import Me from './component/Me';
+import AppReducer from './redux/reducers';
+import Footer from './component/Footer';
+
+const store = createStore(AppReducer, {}, applyMiddleware(ReduxThunk));
+
+class Home extends PureComponent {
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={{width: '40vw', alignItems: 'center'}}>
+          <Header />
+          <Actions />
+          <Me />
+        </View>
+        <Footer />
+      </View>
+    )
+  }
+}
 
 function App() {
   return (
-    <View style={styles.container}>
-      <Header/>
-      <Actions/>
-      <Me/>
-    </View>
+    <Provider store={store}>
+      <Home />
+    </Provider>
   );
 }
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Color.main,
     padding: 20,
-    height:"100vh"
+    height: "100vh",
+    alignItems: 'center'
   },
   header: {
     flex: 0,
