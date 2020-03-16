@@ -1,8 +1,8 @@
 const Color = {
-    main: '#071A26',
+    main: '#21232d',
     mainLight: '#2D5F73',
-    primary : '#A6174B',
-    secondary: "#8ABF88",
+    primary : '#f92672',
+    secondary: "#57c7ff",
     white: '#d8d8d6'
 };
 

@@ -5,7 +5,7 @@ import Color from '../utils/Color';
 export default class Actions extends PureComponent {
     render() {
         return (
-            <View>
+            <View style={{alignItems: 'center'}}>
                 <View style={[styles.header, { flexDirection: 'row' }]}>
                     <TouchableOpacity>
                         <Text style={styles.calltoaction} >About</Text>
@@ -26,7 +26,6 @@ export default class Actions extends PureComponent {
 const styles = StyleSheet.create({
     header: {
         flex: 0,
-        backgroundColor: Color.main,
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,

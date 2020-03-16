@@ -20,10 +20,10 @@ const styles = StyleSheet.create({
       margin: 20,
     },
     title: {
-      color: Color.white,
+      color: Color.main,
       padding: 20,
       backgroundColor: Color.primary,
-      fontSize: 28,
+      fontSize: 32,
       fontWeight: '700'
     }
   });

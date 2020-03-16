@@ -9,7 +9,7 @@ export default class Me extends Component {
         <Text style={styles.infotext} >
           My name is Maher Zaidoune.{"\n"}
           I'm a mobile application developer from <Text style={[styles.infotext, { color: Color.secondary, fontSize: 20, padding: 5 }]} >Tunisia</Text>
-          {"\n"} I live in <Text style={[styles.infotext, { color: Color.secondary, fontSize: 20, padding: 5 }]} >Sousse</Text> and work at <Text style={[styles.infotext, { color: Color.secondary, fontSize: 20, padding: 5 }]} >Satoripop</Text>
+          {"\n"} I live in <Text style={[styles.infotext, { color: Color.secondary, fontSize: 20, padding: 5 }]} >Sousse</Text> and work at <Text style={[styles.infotext, { color: Color.secondary, fontSize: 20, padding: 5 }]} >Satoripop</Text> .
           {"\n"}
 
         </Text>
@@ -20,14 +20,13 @@ export default class Me extends Component {
 const styles = StyleSheet.create({
   infotext: {
     color: Color.white,
-    fontSize: 18,
+    fontSize: 20,
     padding: 20,
     fontWeight: '400',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   info: {
-    flexGrow: 1,
-    backgroundColor: Color.main,
+    flex: 1,
     padding: 10
   }
 });

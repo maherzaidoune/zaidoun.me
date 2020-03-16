@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { View, StyleSheet } from 'react-native-web';
+import { View, StyleSheet, ScrollView } from 'react-native-web';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import { Provider } from 'react-redux';
@@ -16,11 +16,13 @@ class Home extends PureComponent {
   render() {
     return (
       <View style={styles.container}>
-        <View style={{width: '40vw', alignItems: 'center'}}>
-          <Header />
-          <Actions />
-          <Me />
-        </View>
+        <ScrollView>
+          <View style={{ alignItems: 'center' }}>
+            <Header />
+            <Actions />
+            <Me />
+          </View>
+        </ScrollView>
         <Footer />
       </View>
     )
@@ -37,7 +39,7 @@ function App() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Color.main,
-    padding: 20,
+    padding: 15,
     height: "100vh",
     alignItems: 'center'
   },
