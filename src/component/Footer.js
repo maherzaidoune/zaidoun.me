@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, Image } from 'react-native'
 import Color from '../utils/Color';
+import { TouchableOpacity, Linking } from 'react-native-web';
 
 export default class Footer extends Component {
     render() {
@@ -9,19 +10,25 @@ export default class Footer extends Component {
                 <View style={styles.seperator}></View>
                 <View style={styles.footerInfo}>
                     <Text style={styles.footerDesc}>Buit with React Native Web</Text>
-                    <View style={{flexDirection : 'row', marginTop: 5}}>
-                        <Image
-                            style={{ width: 30, height: 30, marginLeft: 5, marginRight: 5 }}
-                            source={{ uri: 'https://img.icons8.com/doodle/192/000000/facebook-new.png' }}
-                        />
-                        <Image
-                            style={{ width: 30, height: 30, marginLeft: 5, marginRight: 5 }}
-                            source={{ uri: 'https://img.icons8.com/doodle/192/000000/github--v1.png' }}
-                        />
-                        <Image
-                            style={{ width: 30, height: 30, marginLeft: 5, marginRight: 5 }}
-                            source={{ uri: 'https://img.icons8.com/doodle/192/000000/linkedin.png' }}
-                        />
+                    <View style={{ flexDirection: 'row', marginTop: 5 }}>
+                        <TouchableOpacity onPress={() => Linking.openURL('https://www.facebook.com/maher.zaidoune')}>
+                            <Image
+                                style={{ width: 30, height: 30, marginLeft: 5, marginRight: 5 }}
+                                source={{ uri: 'https://img.icons8.com/doodle/192/000000/facebook-new.png' }}
+                            />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => Linking.openURL('https://github.com/maherzaidoune')}>
+                            <Image
+                                style={{ width: 30, height: 30, marginLeft: 5, marginRight: 5 }}
+                                source={{ uri: 'https://img.icons8.com/doodle/192/000000/github--v1.png' }}
+                            />
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/zaidounemaher')}>
+                            <Image
+                                style={{ width: 30, height: 30, marginLeft: 5, marginRight: 5 }}
+                                source={{ uri: 'https://img.icons8.com/doodle/192/000000/linkedin.png' }}
+                            />
+                        </TouchableOpacity>
                     </View>
 
                 </View>

@@ -1,11 +1,15 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React, { PureComponent } from 'react'
+import { Text, View, Image } from 'react-native'
 
-export default class About extends Component {
+export default class About extends PureComponent {
     render() {
         return (
-            <View>
-                <Text> textInComponent </Text>
+            <View style={{
+                flex: 1,
+                alignItems: 'center',
+                justifyContent: 'flex-start'
+            }}>
+               
             </View>
         )
     }

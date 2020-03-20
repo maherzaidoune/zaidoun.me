@@ -6,21 +6,36 @@ import { Provider } from 'react-redux';
 import Color from './utils/Color';
 import Header from './component/Header';
 import Actions from './component/Actions';
-import Me from './component/Me';
 import AppReducer from './redux/reducers';
 import Footer from './component/Footer';
+import { Pages } from './navigation/Pages';
+import { Navigator } from './navigation/Navigator';
 
 const store = createStore(AppReducer, {}, applyMiddleware(ReduxThunk));
 
 class Home extends PureComponent {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      page: Pages.Main
+    }
+  }
+
+  updateRoute = (page) => {
+    this.setState({
+      page
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <ScrollView>
           <View style={{ alignItems: 'center' }}>
             <Header />
-            <Actions />
-            <Me />
+            <Actions updateRoute={this.updateRoute} />
+            {Navigator(this.state.page)}
           </View>
         </ScrollView>
         <Footer />

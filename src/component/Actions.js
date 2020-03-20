@@ -1,19 +1,20 @@
 import React, { PureComponent } from 'react'
 import { Text, View, StyleSheet, TouchableOpacity } from 'react-native-web'
 import Color from '../utils/Color';
+import { Pages } from '../navigation/Pages';
 
 export default class Actions extends PureComponent {
     render() {
         return (
             <View style={{alignItems: 'center'}}>
                 <View style={[styles.header, { flexDirection: 'row' }]}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.updateRoute(Pages.About)}>
                         <Text style={styles.calltoaction} >About</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.updateRoute(Pages.Blog)}>
                         <Text style={styles.calltoaction} >Blog</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.updateRoute(Pages.Career)}>
                         <Text style={styles.calltoaction} >Hire me</Text>
                     </TouchableOpacity>
                 </View>
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
         flex: 0,
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 20,
+        padding: 10,
     },
     calltoaction: {
         color: Color.white,
