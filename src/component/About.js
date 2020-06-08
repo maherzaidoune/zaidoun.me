@@ -16,6 +16,31 @@ const me = [
 ]
 export default class About extends PureComponent {
 
+    constructor(props){
+        super(props)
+        this.state  = {
+            sliderIndex: 0,
+            maxSlider: me.length - 1
+        }
+    }
+scrollToIndex = (index, animated) => {
+   this.listRef && this.listRef.scrollToIndex({ index, animated })
+ }
+
+ componentDidMount() {  // use componentDidMount instead since the WillMount is getting deprecated soon
+   setInterval(function() {
+     const { sliderIndex, maxSlider } = this.state
+     let nextIndex = 0
+
+     if (sliderIndex < maxSlider) {
+       nextIndex = sliderIndex + 1
+     }
+
+     this.scrollToIndex(nextIndex, true)
+     this.setState({sliderIndex: nextIndex})
+   }.bind(this), 1000)
+ }
+
     renderMe = ({item}) => {
         return(
 <View style={{
@@ -55,6 +80,7 @@ export default class About extends PureComponent {
                     
                 </Text>
                 <FlatList
+                  ref={listRef => { this.listRef = listRef }}
                 showsHorizontalScrollIndicator={false}
                 style={{
                     flex: 1,
