@@ -11,6 +11,5 @@ export const Navigator = (route) => {
             return <About/>
         default:
             return <Me/>
-            break;
     }
 }

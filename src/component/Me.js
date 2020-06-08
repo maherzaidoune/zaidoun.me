@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet } from 'react-native-web'
 import Color from '../utils/Color';
+import { Font } from '../Shared/Font';
 
 export default class Me extends Component {
   render() {
@@ -20,13 +21,13 @@ export default class Me extends Component {
 const styles = StyleSheet.create({
   infotext: {
     color: Color.white,
+    fontFamily: Font.bold,
     fontSize: 20,
     padding: 20,
-    fontWeight: '400',
     textAlign: 'center',
   },
   info: {
     flex: 1,
-    padding: 10
+    justifyContent: 'center',
   }
 });
