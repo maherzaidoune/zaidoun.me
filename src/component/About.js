@@ -27,7 +27,7 @@ scrollToIndex = (index, animated) => {
    this.listRef && this.listRef.scrollToIndex({ index, animated })
  }
 
- componentDidMount() {  // use componentDidMount instead since the WillMount is getting deprecated soon
+ componentDidMount() {  
    setInterval(function() {
      const { sliderIndex, maxSlider } = this.state
      let nextIndex = 0
@@ -43,28 +43,29 @@ scrollToIndex = (index, animated) => {
 
     renderMe = ({item}) => {
         return(
-<View style={{
-            margin: 10,
-            marginEnd: 20,
-            marginStart: 20,
-            padding: 30,
-            height: 130,
-            width: 240,
-            borderWidth: 1,
-            borderRadius: 20,
-            borderColor: Color.secondary,
-            justifyContent: 'center',
-            alignItems: 'flex-start'
-        }}>
-            <Text style={{
+        <View style={{
+                    margin: 10,
+                    marginEnd: 20,
+                    marginStart: 20,
+                    padding: 30,
+                    height: 130,
+                    width: 240,
+                    borderWidth: 1,
+                    borderRadius: 20,
+                    borderColor: Color.secondary,
+                    justifyContent: 'center',
+                    alignItems: 'flex-start'
+                }}>
+                    <Text 
+                    style={{
                         color: Color.white,
                         fontFamily: Font.regular,
                         textAlign: 'start',
                     }}>{item}</Text>
-        </View>
-        )
-        
-    }
+                </View>
+                )
+                
+            }
 
     render() {
         return (
@@ -75,9 +76,8 @@ scrollToIndex = (index, animated) => {
                
             }}>
                <Text 
-               style={styles.infotext} >
+                    style={styles.infotext} >
                     I do stuff on my computer that makes life better 😄
-                    
                 </Text>
                 <FlatList
                   ref={listRef => { this.listRef = listRef }}
